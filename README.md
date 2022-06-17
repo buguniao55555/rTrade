@@ -8,8 +8,6 @@ Contributers:
 |    Name     |     Email     |
 |-------------|---------------|
 | Jiacheng Hu |               |
-|-------------|---------------|
 | Guanlin Li  | lig11@rpi.edu |
-|-------------|---------------|
 | Bozhi Deng  |               |
 
