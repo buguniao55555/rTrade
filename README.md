@@ -2,7 +2,7 @@
 A RCOS Project
 ---
 This project focuses on providing a trading platform for second-hand items. 
-![rTrade_logo](./rTrade_logo.png)
+![rTrade_logo](../rTrade/Assets/rTrade_logo_darkMode.png)
 
 Contributers:
 |    Name     |     Email      |
