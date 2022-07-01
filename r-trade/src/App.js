@@ -9,8 +9,10 @@ function App() {
         <h1> Welcome to rTrade </h1>
         
         <img src={logo} width={450} height={200} alt="logo" />
+
+        <a href = "github.com"> Github Links </a>
         
-        <p> An RCOS Porject </p>
+        <p> An RCOS Porject. </p>
         
       </header>
     </div>
