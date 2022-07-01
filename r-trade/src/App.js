@@ -10,7 +10,6 @@ function App() {
         
         <img src={logo} width={450} height={200} alt="logo" />
 
-        <a href = "github.com"> Github Links </a>
         
         <p> An RCOS Porject. </p>
         
