@@ -416,8 +416,65 @@
 
 	}
 
-//add ios and android here/////////////////
+	// Android.
+	if (client.os == 'android') {
 
+		(function () {
+
+
+			sheet.insertRule('body::after { }', 0);
+			rule = sheet.cssRules[0];
+
+
+			var f = function () {
+				rule.style.cssText = 'height: ' + (Math.max(screen.width, screen.height)) + 'px';
+			};
+
+			on('load', f);
+			on('orientationchange', f);
+			on('touchmove', f);
+
+		})();
+
+		$body.classList.add('is-touch');
+
+	}
+
+	// iOS.
+	else if (client.os == 'ios') {
+
+		if (client.osVersion <= 11)
+			(function () {
+
+
+				sheet.insertRule('body::after { }', 0);
+				rule = sheet.cssRules[0];
+
+				rule.style.cssText = '-webkit-transform: scale(1.0)';
+
+			})();
+
+		if (client.osVersion <= 11)
+			(function () {
+
+				sheet.insertRule('body.ios-focus-fix::before { }', 0);
+				rule = sheet.cssRules[0];
+
+				rule.style.cssText = 'height: calc(100% + 60px)';
+
+				on('focus', function (event) {
+					$body.classList.add('ios-focus-fix');
+				}, true);
+
+				on('blur', function (event) {
+					$body.classList.remove('ios-focus-fix');
+				}, true);
+
+			})();
+
+		$body.classList.add('is-touch');
+
+	}
 
 	var scrollEvents = {
 
