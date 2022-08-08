@@ -31,3 +31,35 @@ Environment: Windows 10 10.0.19044
     * Solution to possible error
 
         If you are unable to open the [admin page](http://localhost:1337/admin), it is possible that some other programs are using the port 1337. To view which program is using the port, open a command prompt with administrator and type `netstat -aon`. This will list all programs that are currently using the localhost ports. Find port 1337 and find the PID of the program (which is the last number on that row). Open task manager and go to Details page, sort by PID and kill the specific program with the corresponding PID. In my case, the RAZER service is using the port, so I can simply kill the RAZER service. You can also change the port strapi will be using by opening up .env file and change the port to another number that will not conflict with other programs. 
+
+3. Configure your backend
+    
+    now as we have created a backend, it's time for us to configure it to provide API in order to communicate with the frontend. 
+
+    type in `http://localhost:1337/admin` or change 1337 to the port you assign to strapi, which will lead you to the admin page. Register a new account, and login with that account. You should now see the admin panel. 
+
+
+4. Examples
+   
+   * Google account authentication 
+  
+        First, visit the [Google Developer Console](https://console.cloud.google.com/apis/credentials/oauthclient) to get a new OAuth Client and get the Client ID and Client secret. You should create a new OAuth client ID first, then choose "web application" as the application type, then add the following redirect URLs:
+
+        http://localhost:1337/api/connect/google/callback
+
+        This url might change based on the version of the strapi you are currently using. We can find the required url in later steps. 
+
+        You should also add your front-end url at this position, but since we are focusing on Strapi, I will not mention too much about the front-end. 
+
+        After you click the save button, you should be able to get the new OAuth Client ID and secret. Save the data file. 
+
+        Now, go to Strapi admin page, and choose *settings* on the left side of the screen. Choose *Providers* in the *USERS & PERMISSIONS PLUGIN* section, and find *Google* among the list of providers. Click it and you should see the *edit Provider* page. You need to put the Client ID and secret in this page, and set your front-end url. You should also be able to see your back-end url here. After you finished, click save button. 
+
+        ![picture-provider](../Assets/02.png)
+        ![picture-auth](../Assets/03.png)
+
+        Now the Google Auth should be able to work. 
+
+        To view all users, go to the *Content Manager* section, and click on the *User* in the *COLLECTION TYPE* section. 
+        
+        ![picture-user](../Assets/01.png)
