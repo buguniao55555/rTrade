@@ -63,3 +63,33 @@ Environment: Windows 10 10.0.19044
         To view all users, go to the *Content Manager* section, and click on the *User* in the *COLLECTION TYPE* section. 
         
         ![picture-user](../Assets/01.png)
+
+
+    * Blog page building
+
+        First, go to Content-Type Builder on the left side of the panel. Click *Create  new collection type* under section *COLLECTION TYPES*, and write `article-category` in *Display name* section. Click continue, then add:
+        
+        * Text (**used as the name of the categories of the articles**, choose short text type and select *required field* in *ADVANCED SETTINGS*)
+
+        After you finished, click save on the up-right corner. 
+        
+        Now we build the category type, we can start building the main article type.Click *Create new collection type* under section *COLLECTION TYPES*, and write `article` in *Display name* section. Click continue, then add:
+        * Text (Name = title, Type = short text, select *required field* in *ADVANCED SETTINGS*)
+        * Rich text (Name = content, select *required field* in *ADVANCED SETTINGS*)
+        * Date (Name = publish_time, Type = datetime (ex: 01/01/2022 00:00 AM), select *required field* in *ADVANCED SETTINGS*)
+        * Media (Name = img, Type = Single Media, select *required field* in *ADVANCED SETTINGS*)
+        * Relation (Name = article_category, select *has many*, select right side collection name as *article-category*, see following image)![image-category](../Assets/04.png)
+
+        After you finished, click save on the up-right corner.
+
+        Now, the structures of the article is set, and we can move forward to build our first article. move to the *Content manager* on the left side panel, and first choose *article-category* in *COLLECTION TYPES* section. Click *Create new entry* on the up-right corner. You should be able to see a name section. Write anything for your article types. For example, you can write *Novel* for novel-type articles, or *short stories* for short stories type articles. Click save on the up-right corner, then click publish at the same position. 
+
+        Now we have set up our article types, we can proceed to add our first article.  Choose *article* in *COLLECTION TYPES* section. Click *Create new entry* on the up-right corner. Now, you should be able to see all the collection types we build in previous steps. Write anything you wish, and don't forget that there's a classification on the right side panel under *RELATION* section. You should be able to see all the article types you added in previous steps. After you finished, click save and publish on the up-right corner. 
+
+        Now, our first article is published. However, we still cannot view it from outside because we have not yet give permission to other users to view it. To make the article public, go to *Settings* on the left side of the panel, and choose *Roles* under **USERS & PERMISSIONS PLUGIN** section. Since there are two roles in Settings section, please make sure you choose the correct one. Then, click *Public* section, and choose *arcitle* under *Permissions* section. Select *find* and *findOne*, then click save on the up-right corner. Repeat the procedure for *article-category*. 
+        
+        ![img-permission-settings](../Assets/05.png)
+
+        Now, you should be able to view your article in json format under [http://localhost:1337/api/articles](http://localhost:5020/api/articles). 
+
+        Congratulations! You have now published your first article. 
