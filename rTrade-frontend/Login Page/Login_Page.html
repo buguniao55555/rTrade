@@ -1,12 +1,12 @@
 <!DOCTYPE HTML>
 <html lang="en">
 	<head>
-		<title>Login Page</title>
+		<title>Login Page (copy)</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
 		<meta name="description" content="Login Page of RTrade" />
-		<meta property="og:site_name" content="Login Page" />
-		<meta property="og:title" content="Login Page" />
+		<meta property="og:site_name" content="Login Page (copy)" />
+		<meta property="og:title" content="Login Page (copy)" />
 		<meta property="og:type" content="website" />
 		<meta property="og:description" content="Login Page of RTrade" />
 		<link href="https://fonts.googleapis.com/css?display=swap&family=JetBrains+Mono:700,700italic,400,400italic,600,600italic%7CLato:400,400italic" rel="stylesheet" type="text/css" />
@@ -27,8 +27,17 @@
 							<div class="field">
 								<input type="email" name="email" id="form01-email" placeholder="Email address" maxlength="128" required />
 							</div>
+							<div class="field">
+								<input type="text" name="phone" id="form01-phone" placeholder="Password" maxlength="64" required />
+							</div>
+							<div class="field">
+								<div class="checkbox">
+									<input type="checkbox" name="consent" id="form01-consent" value="checked" required />
+									<label for="form01-consent"><span>I accept user agreement</span></label>
+								</div>
+							</div>
 							<div class="actions">
-								<button type="submit"><svg><use xlink:href="assets/icons.svg#arrow-right-light"></use></svg><span class="label">Next</span></button>
+								<button type="submit"><svg><use xlink:href="assets/icons.svg#arrow-right-light"></use></svg><span class="label">Login</span></button>
 							</div>
 						</div>
 						<input type="hidden" name="id" value="form01" />

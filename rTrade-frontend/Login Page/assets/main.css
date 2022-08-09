@@ -526,7 +526,8 @@ form.style1:not(:last-child) {
 }
 
 form.style1 .inner > * {
-	margin: 0 0 0 1rem;
+	margin: 1rem 0 0 0;
+	max-width: 100%;
 }
 
 form.style1 .inner > :first-child {
@@ -535,9 +536,6 @@ form.style1 .inner > :first-child {
 
 form.style1 .inner {
 	width: 35rem;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	align-items: center;
 }
 
 form.style1 label:first-child {
@@ -703,15 +701,8 @@ form.style1 .actions button .label {
 	width: 100%;
 }
 
-form.style1 .inner .field {
-	flex-grow: 1;
-	flex-shrink: 1;
-	width: 100%;
-}
-
-form.style1 .inner .actions {
-	flex-grow: 0;
-	flex-shrink: 0;
+form.style1 .inner > :first-child > label:first-child {
+	margin-top: 0;
 }
 
 form.style1 .actions button:before {
@@ -959,22 +950,6 @@ form.style1 .file[data-filename=""]:before {
 		width: 1.5em;
 	}
 	
-	form.style1 .inner {
-		flex-direction: column;
-	}
-	
-	form.style1 .inner .field {
-		flex-grow: 0;
-	}
-	
-	form.style1 .inner > * {
-		margin: 1rem 0 0 0;
-	}
-	
-	form.style1 .inner > :first-child {
-		margin: 0;
-	}
-	
 	.icons.style1 {
 		font-size: 1.5em;
 		gap: 1.25rem;
@@ -984,10 +959,6 @@ form.style1 .file[data-filename=""]:before {
 @media (max-width: 480px) {
 	#main > .inner {
 		--spacing: 1.3125rem;
-	}
-	
-	form.style1 .inner .actions {
-		width: 100%;
 	}
 	
 	form.style1 .actions button {
