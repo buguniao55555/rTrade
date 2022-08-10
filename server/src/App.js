@@ -6,6 +6,7 @@ import Header from "./components/Header/Header.js";
 import Footer from "./components/Footer/Footer.js";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
+import Test from "./pages/Test/Test";
 
 import './App.scss';
 
@@ -21,6 +22,9 @@ export default class App extends React.Component {
 
           {/* About Poll Buddy Page */}
           <Route exact path="/about" element={<About updateTitle={this.updateTitle} />} />
+          
+          {/* Test Page */}
+          <Route exact path="/test" element={<Test updateTitle={this.updateTitle} />} />
         </Routes>
         
       </div>
